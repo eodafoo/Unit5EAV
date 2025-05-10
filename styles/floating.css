@@ -1,0 +1,51 @@
+/* 悬浮输入框窗口 */
+.floating-window {
+  position: absolute;
+  width: 300px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* 文本输入框 */
+.floating-window textarea {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  padding: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* 按钮区域 */
+.floating-window .button-group {
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* 按钮 */
+.floating-window .button-group button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 发送按钮样式 */
+.floating-window .send-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 取消按钮样式 */
+.floating-window .cancel-button {
+  background-color: #f44336;
+  color: white;
+}
