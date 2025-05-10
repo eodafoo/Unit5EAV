@@ -33,7 +33,7 @@ function createFloatingWindow(mouseX, mouseY, selection){
 
 	sendButton.addEventListener('click', function() {
 		const input = textarea.value;
-		const response = chrome.runtime.sendMessage({
+		chrome.runtime.sendMessage({
 		topic: 'askOpenAI',
 		userSelection: selection,
 		userInput: input

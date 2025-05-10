@@ -36,8 +36,16 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     callOpenAI(request.userSelection, request.userInput)
       .then(data => {
-        console.log('OpenAIResponse:', data);
-        sendResponse({'OpenAIResponse':data}); 
+        const aidata = data.choices[0]?.message?.content;
+        if (aidata !== undefined){
+          // chrome.runtime.sendMessage(
+          //   {topic:"showUpinPopup",
+          //     aiAnswer:aidata
+          //   }
+          // );
+          chrome.storage.local.set({aiAnswer:aidata})
+        }
+        // sendResponse({'OpenAIResponse':data}); 
       })
       .catch(error => {
         console.error('APIError:', error);
